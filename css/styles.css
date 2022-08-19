@@ -1,0 +1,45 @@
+body {
+    width: 1500px;
+    height: 995px;
+    margin: 0 auto;
+    border: 15px solid goldenrod;
+}
+
+#boat {
+    height: 150px;
+    width: 150px;
+    padding-top: 340px;
+    padding-left: 1200px;
+    position: relative;
+}
+
+#moon {
+    height: 150px;
+    width: 150px;
+    padding-top: 150px;
+    padding-left: 150px;
+}
+
+#shore {
+    position: absolute;
+    padding-top: 230px;
+    padding-left: 1100px;
+    width: 400px;
+    height: 400px;
+}
+.water {
+    background-color: darkblue;
+    width: 1500px;
+    height: 200px;
+    position: absolute;
+}
+
+.top {
+    position: absolute;
+}
+
+.window {
+    background-color: black;
+    height: 800px;
+    width: 1500px;
+}
