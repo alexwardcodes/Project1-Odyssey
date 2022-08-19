@@ -14,13 +14,19 @@
 2. Pick an idea **DONE**
  - Discuss ideas with instructor **DONE**
  - Pick your idea! Move on to the next step… **DONE**
-3. Wireframe and user stories **IN PROGRESS**
+3. Wireframe and user stories **DONE**
 4. Create repo and starting files (.js, .css., .html) **DONE**
-5. Break each one down by requirements
+5. Break the process down by requirements **IN PROGRESS**  
+6. Basic layout & image creation **IN PROGRESS**
+7. Structure logic and begin working on functions **IN PROGRESS**
+8. Test functions
+9. Touch up styling
+10. Test game
+11. BONUS: Add extra animations/styling
 
-1. Brainstorming
+Stage 1: Brainstorming  
 
-I had the following ideas for games, which I reject. The first was too simple, and the third was too hard.
+I had a brainstorming session first of all to decide which game I wanted to pick: a choice of Tic-Tac-Toe or a game of choice. I wanted to go with my own idea and had the following ideas for games, which I rejected. The first was too simple, and the third was too hard.
 
 ### Game 1
 **Title:** Riddle Me This  
@@ -44,7 +50,9 @@ Start: You start in front of your forest with the trees at your back when the Sk
 **Look:** Green background, trees to the left, forest to the bottom and top  
 **Scoring:** A health bar on the player’s side shows their health and trees remaining, a health bar on the Skull King’s side shows his health
 
-2. My idea
+2. My idea  
+
+Not ready to view yet... all will soon be revealed!
 
 <!-- ### Game 2
 **Title:** Odyssey  
@@ -57,9 +65,54 @@ Start: You start in front of your forest with the trees at your back when the Sk
 **Look:** Player is next to a gate on the shore on the right of the screen, background is starry sky, cave ceiling look at the top, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen  
 **Scoring:** The number of guesses left is shown on the bottom of the screen, number of spaces left to cross the river is next to this -->
 
-3. Wireframe and user stories **IN PROGRESS**
-4. Create repo and starting files (.js, .css., .html) **DONE**
-5. Break each one down by requirements
+Stage 3: Wireframe and user stories  
+
+**Wireframe:** I started by creating a wireframe using Figma Jam. I created a separate frame for each screen that I wanted the player to see. I then exported this and would later add it to my Git repo as an outline to use while designing my game.  
+
+**User Stories:** As a new player, I want to know what the game is about so I can play it  
+As a player, I want to know the aim of the game and how it's played so I can win  
+As a player, I want to know who I'm playing against so I know who I'm playing against  
+As a player, I want to know how the score is kept so I can keep track of how well I'm doing  
+As a player, I want to see progression so I feel like I'm on an "odyssey"  
+As a player, I want the game to be interactive so that it's fun  
+
+Stage 4: Creating Git repo and starting files  
+
+I first created a repo on Git to store my code and cloned this to my local drive. I then created separate .js, .css and .html files, as well as an image folder, README.md and imported my wireframe. Then - frequent commits!
+
+Stage 5: Breaking the process down by requirements  
+
+I started out with the following requirements:  
+
+- The game has to have a retro feel. Everyone loves a retro game, it's easy on the eyes, and gameplay can be simple but fun at the same time, particularly if little quirks are introduced (see everything marked "BONUS")
+- There has to be an intro sequence showing the game title, player character & NPC
+- There has to be a question/answer round that shows correct/incorrect answers
+- There has to be a progression sequence
+- There has to be a losing sequence
+- There to be a win sequence
+- There has to be an end sequence
+- There has to be an option to restart the game whether player loses or wins
+- BONUS: the player might get to choose how many questions to play (minimum of 10)
+- BONUS: there might be little quirks to add to the feel of the game and improve the player's experience
+
+Stage 6: Basic layout & image creation
+
+I knew I wanted to use pixellated characters for my game, as well as a pixellated layout and features, so I first created these using a pixel image creator (listed under Technologies Used).
+
+I established the basic layout of my game using CSS and initially positioned all of my elements so I know where they go and to fix any clashes in placement or styling.
+
+Stage 7: Structuring logic and starting work on the functions
+
+Looking through my requirements, I realised my code could be best broken down into several sections of logic: the intro sequence, the play sequence, the progression sequence, the lose sequence, and the end sequence, which only runs if the player wins. I split my .js into these 5 sections and planned out the logic for each one.  
+
+Stage 8: Test functions  
+
+Stage 9: Touch up styling  
+
+Stage 10: Test game  
+
+Stage 11: BONUS: Add extra animations/styling  
+
 
 <!-- Create a repository on github enterprise for your project
 Clone it to the projects folder on your computer

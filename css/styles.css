@@ -1,10 +1,18 @@
+/* Layout (CSS)
+
+Position & style text of title
+Position & style player at start - DONE (would prefer in foreground)
+Position & style water, shore, moon, stars - IN PROGRESS
+Position & style text of dialogue
+Position & style text of score tracking
+Place & style shore, portal at end */
+
 body {
     width: 1500px;
     height: 995px;
     margin: 0 auto;
     border: 15px solid goldenrod;
 }
-
 #boat {
     height: 150px;
     width: 150px;
@@ -26,6 +34,14 @@ body {
     padding-left: 1100px;
     width: 400px;
     height: 400px;
+}
+
+#player {
+    position: absolute;
+    left: 1400px;
+    top: 600px;
+    height: 150px;
+    width: 150px;
 }
 .water {
     background-color: darkblue;
