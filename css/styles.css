@@ -9,53 +9,83 @@ Place & style shore, portal at end */
 
 body {
     width: 1500px;
-    height: 995px;
+    padding-top: 50px;
     margin: 0 auto;
+    background-color: black;
+}
+
+.window {
+    background-color: black;
+    height: 900px;
+    width: 1500px;
     border: 15px solid goldenrod;
 }
+
 #boat {
     height: 150px;
     width: 150px;
-    padding-top: 340px;
+    top: 660px;
     padding-left: 1200px;
-    position: relative;
+    position: absolute;
+}
+
+#ferryman {
+    height: 150px;
+    width: 150px;
+    top: 670px;
+    left: 0px;
+    position: absolute;
 }
 
 #moon {
     height: 150px;
     width: 150px;
-    padding-top: 150px;
-    padding-left: 150px;
+    top: 200px;
+    left: 150px;
+    position: absolute;
 }
 
 #shore {
-    position: absolute;
-    padding-top: 230px;
-    padding-left: 1100px;
+    position: relative;
+    top: 322px;
+    left: 1100px;
     width: 400px;
     height: 400px;
 }
 
 #player {
-    position: absolute;
+    position: relative;
     left: 1400px;
-    top: 600px;
+    top: 510px;
     height: 150px;
     width: 150px;
+}
+
+.flex-container {
+    display: flex;
+    position: absolute;
+    top: 50px;
+}
+.dialogue {
+    position: relative;
+    height: 200px;
+    width: 400px;
+    left: 500px;
+    top: 300px;
+    border: 10px double solid red;
+    border-style: double;
+    color: goldenrod;
+    text-shadow: 5px 5px red;
+    font-family: 'Aboreto', cursive;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .water {
     background-color: darkblue;
     width: 1500px;
-    height: 200px;
+    height: 155px;
+    top: 810px;
     position: absolute;
-}
-
-.top {
-    position: absolute;
-}
-
-.window {
-    background-color: black;
-    height: 800px;
-    width: 1500px;
 }
