@@ -56,14 +56,14 @@ Not ready to view yet... all will soon be revealed!
 
 <!-- ### Game 2
 **Title:** Odyssey  
-**Idea:** You wake up in the Underworld - and you don’t know who you are! Oh no! You don’t belong here at all! You have to get home!  
+**Idea:** You wake up in the Underworld - and you don’t know where you are! Oh no! You don’t belong here at all! You have to get home!  
 **Aim:** Get to the other side of the River Styx 
-**Start:** You start next to a gate on the banks of the River Styx - the portal to get out is on the other side. The Ferry Man wants you to guess your name to allow you to cross.  
+**Start:** You start next to a gate on the banks of the River Styx - the portal to get out is on the other side. The Ferry Man wants you to guess a series of questions to allow you to cross.  
 **Progression:** For each correct guess you move forward across the river  
-**How to win:** Guess the letters in your name before your guesses run out  
-**How to lose:** Fail to solve the puzzle in enough moves and you will be trapped in the Underworld forever  
-**Look:** Player is next to a gate on the shore on the right of the screen, background is starry sky, cave ceiling look at the top, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen  
-**Scoring:** The number of guesses left is shown on the bottom of the screen, number of spaces left to cross the river is next to this -->
+**How to win:** Guess the letters in the word before your guesses run out  
+**How to lose:** Fail to solve the puzzle in enough moves or get too many questions wrong and you will be trapped in the Underworld forever  
+**Look:** Player is on the shore on the right of the screen, background is starry sky, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen  
+**Scoring:** The score and number of guesses left is shown on the bottom of the screen, number of spaces left to cross the river is next to this -->
 
 Stage 3: Wireframe and user stories  
 
