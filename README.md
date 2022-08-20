@@ -138,7 +138,7 @@ Well-formatted, well-commented code
 ReadME
 List technologies used
 Link to wireframes and stories
-Document your planning and tella story about your development process + problem-solving strategy
+Document your planning and tell a story about your development process + problem-solving strategy
 List unsolved problems and bugs that would be fixed in future iterations
 Describe how you solved for the winner
 Describe how some of your favourite functions work

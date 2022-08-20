@@ -16,17 +16,18 @@ const footer = $('footer');
 const nav = $('nav');
 
 const questions = {
-    1: ["I am bright and I give light", "yellow"],
+    1: ["I am bright and I give light", "sun"],
     2: ["I am grey and I live in the sea", "seal"],
     3: ["I have one eye but no body", "needle"],
-    4: ["I am the capital of Indonesia", "Jakarta"],
+    4: ["I am the capital of Indonesia", "jakarta"],
     5: ["I am long in the morning, invisible at noon", "shadow"],
     6: ["I am used to build houses", "brick"],
     7: ["I hold drinks", "cup"]
 }
 
 let score = 0;
-nav.text("Your current score: " + score);
+const playerName = "?";
+nav.html("You have: " + score + " OBOLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: " + playerName);
 
 // Intro sequence working so far!
 
@@ -34,7 +35,7 @@ introSeq();
 
 function introSeq() {
     $('#player, #moon, .window, .dialogue, #boat, nav, footer').hide();
-    $('.window, nav, footer').fadeIn(4000);
+    $('.window, nav, footer, #boat').fadeIn(4000);
     $('.dialogue').html("<h1>ODYSSEY</h1>")
     $('#moon, .dialogue').fadeIn(4000);
     $('.dialogue').fadeOut(3000);
@@ -54,15 +55,15 @@ setTimeout(() => {
 // setTimeout(question, 22000);
 
 // Partial progSeq() TEST - it works!
-// setTimeout(function progSeq() {
-//     function moveLeft() {
-//         $("#boat").animate({ "padding-left": "0px"}, 4000);
-//         $("#boat").animate({ "padding-left": "1200px" }, 4000);
-//       }
+setTimeout(function progSeq() {
+    function moveLeft() {
+        $("#boat").animate({ "padding-left": "0px"}, 4000);
+        $("#boat").animate({ "padding-left": "1200px" }, 4000);
+      }
       
-//       // Progress function TEST - it works!
-//       moveLeft();
-// }, 20000);
+      // Progress function TEST - it works!
+      moveLeft();
+}, 20000);
 /* Progress function - progSeq()
 Boat slide left, then right DONE
 BONUS: constellation fades/slides out, new constellation fades/slides in */
@@ -70,49 +71,56 @@ BONUS: constellation fades/slides out, new constellation fades/slides in */
 
 /* Question round function - question()
 BONUS: allow player to select number of questions
-display question
-display input area
-log input
-check input
-if correct, show correct input
-if incorrect, effect to show answer incorrect
-if too many letters incorrect,  run gameLost();
-provide answer
-provide response
-text fade out */
-
-// question(); - WORKS SO FAR!!!
-// question();
-// function question() {
-//     const question = $('.question');
-//     dialogue.css({"border": "0px", "height": "400px", "align-items": "flex-start"});
-//     dialogue.append('<div class="question"></div>');
-//     let random = Math.floor(Math.random() * 3);
-//     let toAnswer = questions[random][0];
-//     $('.question').show(1000).text(toAnswer);
-//     $('.question').delay(3000).fadeOut(2000, answerOne);
-//     function answerOne() {
-//         $('.question').text("What am I?");
-//         $('.question').delay(3000).fadeIn(2000);
-//         $('.question').delay(3000).fadeOut(2000, answerTwo);
-//         function answerTwo() {
-//             $('.question').text("I am");
-//         $('.question').delay(3000).fadeIn(2000);
-//         }
-//      }
-//     }
-
-// display question
-// display input area
-// log input
-// check input
-// if correct, show correct input
+// display question DONE
+// display input area DONE
+// log input DONE
+// check input DONE
+// if correct, show correct input IN PROGRESS
 // if incorrect, effect to show answer incorrect
 // if too many letters incorrect,  run gameLost();
 // provide answer
 // provide response
-// text fade out
+// text fade out */
 
+// question(); - WORKS SO FAR!!!
+function question() {
+    const question = $('.question');
+    dialogue.css({"border": "0px", "height": "400px", "align-items": "flex-start"});
+    dialogue.append('<div class="question"></div>');
+    let random = Math.floor(Math.random());
+    if (random < 1) random = 1;
+    random *= 7;
+    let toAnswer = questions[random][0];
+    $('.question, .dialogue').show(1000).text(toAnswer);
+    $('.question').delay(3000).fadeOut(2000, answerOne);
+    function answerOne() {
+        $('.question').text("What am I?");
+        $('.question').delay(3000).fadeIn(2000);
+        $('.question').delay(3000).fadeOut(2000, answerTwo);
+        function answerTwo() {
+            $('.question').text("I am...");
+            $('.question').delay(3000).fadeIn(2000);
+            $('.question').delay(3000).fadeOut(2000, response)
+            function response() {
+                $('.question').text("").fadeIn();
+                $('.question').append('<p><input type="text" placeholder="I am..." id="playerResponse"></input></p>').fadeIn(2000);
+                let solution = questions[random][1];
+                let playerAnswer = null;
+                $('#playerResponse').keypress(function(event) {
+                    let keycode = (event.keyCode ? event.keyCode : event.which);
+                    if(keycode == '13') {
+                        let input = document.getElementById('playerResponse').value;
+                        playerAnswer = input;
+                        if (playerAnswer === solution) {
+                            score += 1;
+                            $('.question').remove('input').fadeOut(2000);
+                        }
+                    };
+                });
+            }
+        }
+    }
+}
 // dialogue function with for loop that takes parameters(const, delay and fade and increments?)
 
 /* Game lose function - gameLost()
