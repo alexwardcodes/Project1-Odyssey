@@ -110,6 +110,7 @@ body {
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
+    width: 250px
 }
 
 nav, footer {
