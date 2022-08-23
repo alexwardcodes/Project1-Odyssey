@@ -30,7 +30,7 @@ body {
 }
 
 #ferryman {
-    height: 120px;
+    height: 118px;
     width: 80px;
     top: 40px;
     left: 100px;
@@ -42,7 +42,7 @@ body {
     height: 150px;
     width: 150px;
     top: 200px;
-    left: 150px;
+    left: 250px;
     position: absolute;
 }
 
@@ -53,6 +53,22 @@ body {
     width: 400px;
     height: 400px;
 }
+
+#shore1 {
+    position: relative;
+    top: 322px;
+    right: 404px;
+    width: 400px;
+    height: 400px;
+}
+
+#portal {
+    right: 824px;
+    height: 200px;
+    top: 130px;
+    position: relative;
+}
+
 
 #player {
     position: relative;

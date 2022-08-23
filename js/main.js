@@ -10,12 +10,15 @@ Player monologue DONE */
 
 const dialogue = $('.dialogue');
 const player = $('#player');
+const ferryMan = $('#ferryman');
 const boat = $('#boat');
 const moon = $('#moon');
 const shore = $('#shore');
+const shore1 = $('#shore1');
+const portal = $('#portal');
 const footer = $('footer');
 const nav = $('nav');
-const ferryMan = $('#ferryman');
+
 
 const questions = {
     1: ["I am bright and I give light...", "sun"],
@@ -42,7 +45,7 @@ const comments = {
 introSeq();
 
 function introSeq() {
-    $('#player, #moon, .window, .dialogue, #boat, #ferryman, nav, footer').hide();
+    $('#player, #moon, .window, .dialogue, #boat, #ferryman, #portal, #shore1, nav, footer').hide();
     $('.window, nav, footer').fadeIn(4000);
     $('.dialogue').html("<h1>ODYSSEY</h1>")
     $('#moon, .dialogue').fadeIn(4000);
@@ -132,12 +135,11 @@ nav.html("You have: " + score + " OBOLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 // Random number generator; question() references index [0] of the alreadyCalled array to make sure it gets the latest number and isn't repeated
 let alreadyCalled = [];
 function getRandom() {
-    console.log(alreadyCalled + "list of numbers already run")
     let num = (Math.floor(Math.random() * 9) + 1);
     if (!alreadyCalled.includes(num)) {
         alreadyCalled.unshift(num);
         return num;
-    } else { console.log("number already in the array");
+    } else { 
         getRandom();
     }
 };
@@ -179,8 +181,9 @@ function preQuestion() {
         }
 }
 function question() {
-  
-    questionsAsked++;
+    if (questionsAsked === 9) {
+        gameWon();
+    } else {
     dialogue.css({"border": "0px", "height": "400px", "font-size": "40px"});
     getRandom();
     random = alreadyCalled[0];
@@ -189,8 +192,8 @@ function question() {
     dialogue.delay(3000).fadeOut(2000, answerOne);
     function answerOne() {
         dialogue.text("...What am I?");
-        dialogue.delay(2000).fadeIn(2000);
-        dialogue.delay(2000).fadeOut(2000, response);
+        dialogue.delay(1000).fadeIn(2000);
+        dialogue.delay(1000).fadeOut(2000, response);
             function response() {
                 dialogue.text("").fadeIn();
                 dialogue.append('<p><input type="text" placeholder="I am..." id="playerResponse"></input></p>').fadeIn(2000);
@@ -203,7 +206,7 @@ function question() {
                         playerAnswer = input;
                         if (playerAnswer === solution) {
                             score++;
-                            console.log(score);
+                            questionsAsked++;
                             dialogue.remove('input');
                             dialogue.text("Correct!").fadeOut(3000);
                             nav.html("You have: " + score + " OBOLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: " + playerName);
@@ -214,12 +217,12 @@ function question() {
                         } else {
                             dialogue.remove('input');
                             dialogue.text("Uh oh... That wasn't right...").fadeOut(3000, gameLost);
-                        }
+                        } 
                     };
                 });
             }
     }
-    console.log(questionsAsked);
+ }
 }
 // dialogue function with for loop that takes parameters(const, delay and fade and increments?)
 
@@ -244,6 +247,30 @@ Player slide to portal and fade out
 NPC monologue
 Display game win + score 
 Credits + game restart option */
+
+function gameWon() {
+    shore1.fadeIn(100);
+    portal.fadeIn(500);
+    player.animate({"left": "160px", "top": "550px"}).css({"transform": "scaleX(-1)"});
+    ferryMan.animate({"left": "100px"});
+    boat.animate({"padding-left": "900px"}, 3000);
+    dialogue.text("Look there, it's the portal that will take you home...").css({"font-size": "20px", "border": "0px", "text-shadow": "0px 0px black"});
+    dialogue.fadeIn(2000);
+    dialogue.fadeOut(2000);
+    boat.animate({"padding-left": "300px"}, 3000, ending);
+        function ending() {
+            boat.fadeOut();
+            player.css({"opacity": "1"}, 500);
+            ferryMan.css({"opacity": "1"}, 500);
+            ferryMan.fadeIn(500)
+            dialogue.text("This is where I leave you. Well done on making it here!");
+            dialogue.fadeIn(2000);
+            dialogue.fadeOut(2000);
+        }
+}
+
+gameWon();
+
 
 // BONUS FUNCTIONS
 
