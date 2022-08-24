@@ -30,7 +30,7 @@ const questions = {
     6: ["I am used to build houses...", "bricks"],
     7: ["I hold many a drink...", "cup"],
     8: ["I rule the tides...", "moon"],
-    9: ["You hear me, but I don't speak...", "echo"]
+    9: ["You hear me, again and again...", "echo"]
 }
 
 const comments = {
@@ -47,7 +47,7 @@ introSeq();
 
 function introSeq() {
     $('#player, #moon, .window, .dialogue, #boat, #ferryman, #portal, #shore1, nav, footer').hide();
-    $('.window, nav, footer').fadeIn(4000);
+    $('.window, nav, footer').delay(2000).fadeIn(4000);
     $('.dialogue').html("<h1>ODYSSEY</h1>")
     $('#moon, .dialogue').fadeIn(4000);
     $('.dialogue').fadeOut(3000);
@@ -212,7 +212,7 @@ function question() {
                             questionsAsked++;
                             let url = `url('images/stars${questionsAsked}.png')`;
                             function changeBackground() {
-                            stars.animate({"background-image": url }, 2000);
+                                stars.css({"background-image": url });
                              }
                             console.log(questionsAsked);
                             changeBackground();
@@ -282,35 +282,21 @@ function gameWon() {
                 function hint() {
                     dialogue.text("The stars have your answer...");
                     dialogue.fadeIn(2000);
-                    dialogue.fadeOut(2000, endGame);
+                    dialogue.fadeOut(2000);
                     stars.on('click', function() {
                         dialogue.css({"font-size": "60px"});
-                        dialogue.text("Persephone").fadeIn(2000).fadeOut(2000, credits);
-                        function credits() {
-                            dialogue.css({"font-size":"25px"}).html("Thank you for playing <bold>ODYSSEY</bold>!<p />Thanks go to: David Campbell, Jet Haze, and Angelique Ward for their feedback and help; the brilliant GA instructor duo - Saad Iqbal and Ana Borges - as well as all of my GA cohort!<p />I hope you enjoyed playing <3").fadeIn(2000);
-                            dialogue.delay(6000).fadeOut(2000);
-                        }});
+                        dialogue.text("Persephone").fadeIn(2000).fadeOut(2000, endGame);
+                        });
                     function endGame() {
                        player.animate({"top": "-=30px", "left": "-=160px"}, 2000);
                        player.fadeOut(500);
-                       portal.delay(2500).fadeOut(500);
+                       portal.delay(2500).fadeOut(500, credits);
+                       function credits() {
+                        dialogue.css({"font-size":"25px"}).html("Thank you for playing ODYSSEY<p />Thanks go to: David Campbell, Jet Haze, and Angelique Ward for their feedback and help; the brilliant GA instructor duo - Saad Iqbal and Ana Borges - as well as all of my GA cohort!<p />I hope you enjoyed playing <3").fadeIn(2000);
+                        dialogue.delay(6000).fadeOut(2000);
+                         }
                        }
                     }
                 }
             }
         }
-
-
-
-
-// BONUS FUNCTIONS
-
-//  background change
-
-// Function to make the moon glow - NOT WORKING YET
-// function glow() {
-//   $("#moon").css({filter: "brightness(50%)"}, 4000);
-//   $("#moon").css({filter: "brightness(100%)"}, 4000);
-// }
-
-// glow();
