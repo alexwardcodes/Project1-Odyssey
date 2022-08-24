@@ -1,12 +1,12 @@
-//Game Start!
+// //Game Start!
 
-// MAIN FUNCTIONS
+// // MAIN FUNCTIONS
 
-/* Intro sequence function - introSeq() and game
-Fade in title DONE
-Fade out title
-Player fade in & axis flip DONE
-Player monologue DONE */
+// /* Intro sequence function - introSeq() and game
+// Fade in title DONE
+// Fade out title
+// Player fade in & axis flip DONE
+// Player monologue DONE */
 
 const dialogue = $('.dialogue');
 const player = $('#player');
@@ -18,6 +18,7 @@ const shore1 = $('#shore1');
 const portal = $('#portal');
 const footer = $('footer');
 const nav = $('nav');
+const stars = $('.window');
 
 
 const questions = {
@@ -51,8 +52,8 @@ function introSeq() {
     $('#moon, .dialogue').fadeIn(4000);
     $('.dialogue').fadeOut(3000);
     $('#player').fadeIn(14000);
-    setInterval(() => {
-    $('#player').css({"transform": "scaleX(-1)", "left": "1337px"});
+    setTimeout(() => {
+    $('#player').css({"transform": "scaleX(-1)", "left": "-=73px"});
 }
 , 10000);
 setTimeout(() => {
@@ -107,32 +108,34 @@ setTimeout(() => {
 }, 10000);
 }
 
-function dialogueRun (element, text) {
-    element.text(text);
-    element.fadeIn(2000);
-    element.delay(2000).fadeOut(2000);
-}
+// function dialogueRun (element, text) {
+//     element.text(text);
+//     element.fadeIn(2000);
+//     element.delay(2000).fadeOut(2000);
+// }
 
-// Partial progSeq() TEST - it works!
-// setTimeout(function progSeq() {
-//       // Progress function TEST - it works!
-//       moveLeft();
-// }, 20000);
+// // Partial progSeq() TEST - it works!
+// // setTimeout(function progSeq() {
+// //       // Progress function TEST - it works!
+// //       moveLeft();
+// // }, 20000);
 
 function moveLeft() {
-    $("#boat").animate({ "padding-left": "0px"}, 4000);
-    $("#boat").animate({ "padding-left": "1200px" }, 4000);
+    boat.animate({ "padding-left": "200px"}, 4000);
+    shore.delay(500).animate({"opacity": "0"});
+    boat.animate({ "padding-left": "1200px" }, 4000);
+    moon.animate({'left': '+=120px'}, 8000)
   }
-/* Progress function - progSeq()
-Boat slide left, then right DONE
-BONUS: constellation fades/slides out, new constellation fades/slides in */
+// /* Progress function - progSeq()
+// Boat slide left, then right DONE
+// BONUS: constellation fades/slides out, new constellation fades/slides in */
 
 let questionsAsked = 0;
 let score = 0;
 const playerName = "?";
 nav.html("You have: " + score + " OBOLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: " + playerName);
 
-// Random number generator; question() references index [0] of the alreadyCalled array to make sure it gets the latest number and isn't repeated
+// // Random number generator; question() references index [0] of the alreadyCalled array to make sure it gets the latest number and isn't repeated
 let alreadyCalled = [];
 function getRandom() {
     let num = (Math.floor(Math.random() * 9) + 1);
@@ -144,18 +147,18 @@ function getRandom() {
     }
 };
 
-/* Question round function - question()
-// display question DONE
-// display input area DONE
-// log input DONE
-// check input DONE
-// track question asked so it isn't repeated DONE
-// if correct, show correct input DONE
-// if incorrect, effect to show answer incorrect IN PROGRESS
-// text fade out DONE 
-BONUS: allow player to select number of questions */
+// /* Question round function - question()
+// // display question DONE
+// // display input area DONE
+// // log input DONE
+// // check input DONE
+// // track question asked so it isn't repeated DONE
+// // if correct, show correct input DONE
+// // if incorrect, effect to show answer incorrect IN PROGRESS
+// // text fade out DONE 
+// BONUS: allow player to select number of questions */
 
-// question(); - WORKS LIKE A CHARM!!!
+// // question(); - WORKS LIKE A CHARM!!!
 function preQuestion() {
     ferryMan.delay(2000).animate({"left": "1000px"}, 3000);
     dialogue.text("Excellent, here's how it works...").css({"font-size": "20px"});
@@ -173,7 +176,7 @@ function preQuestion() {
                     ferryMan.animate({"opacity": "0"}, 1000);
                     player.animate({"opacity": "0"}, 1000);
                     boat.fadeIn(2000, function() {
-                        dialogue.text("Our journey begins...").fadeIn(2000);
+                        dialogue.text("Here is your first riddle then...").fadeIn(2000);
                         dialogue.delay(2000).fadeOut(2000, question)
                     });
                 }
@@ -181,7 +184,7 @@ function preQuestion() {
         }
 }
 function question() {
-    if (questionsAsked === 9) {
+    if (questionsAsked === 3) {
         gameWon();
     } else {
     dialogue.css({"border": "0px", "height": "400px", "font-size": "40px"});
@@ -192,8 +195,8 @@ function question() {
     dialogue.delay(3000).fadeOut(2000, answerOne);
     function answerOne() {
         dialogue.text("...What am I?");
-        dialogue.delay(1000).fadeIn(2000);
-        dialogue.delay(1000).fadeOut(2000, response);
+        dialogue.delay(500).fadeIn(1500);
+        dialogue.delay(500).fadeOut(1500, response);
             function response() {
                 dialogue.text("").fadeIn();
                 dialogue.append('<p><input type="text" placeholder="I am..." id="playerResponse"></input></p>').fadeIn(2000);
@@ -207,6 +210,12 @@ function question() {
                         if (playerAnswer === solution) {
                             score++;
                             questionsAsked++;
+                            let url = `url('images/stars${questionsAsked}.png')`;
+                            function changeBackground() {
+                            stars.animate({"background-image": url }, 2000);
+                             }
+                            console.log(questionsAsked);
+                            changeBackground();
                             dialogue.remove('input');
                             dialogue.text("Correct!").fadeOut(3000);
                             nav.html("You have: " + score + " OBOLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: " + playerName);
@@ -224,12 +233,12 @@ function question() {
     }
  }
 }
-// dialogue function with for loop that takes parameters(const, delay and fade and increments?)
+// // dialogue function with for loop that takes parameters(const, delay and fade and increments?)
 
-/* Game lose function - gameLost()
-Dialogue + player fade out
-NPC monologue
-Game restart option */
+// /* Game lose function - gameLost()
+// Dialogue + player fade out
+// NPC monologue
+// Game restart option */
 
 function gameLost() {
     boat.animate({ "padding-left": "600px"}, 4000);
@@ -239,19 +248,19 @@ function gameLost() {
     score = 0;
 }
 
-/* End sequence function - gameWon()
-Portal fade in
-Dialogue
-Boat slide to shore
-Player slide to portal and fade out
-NPC monologue
-Display game win + score 
-Credits + game restart option */
+// /* End sequence function - gameWon()
+// Portal fade in
+// Dialogue
+// Boat slide to shore
+// Player slide to portal and fade out
+// NPC monologue
+// Display game win + score 
+// Credits + game restart option */
 
 function gameWon() {
     shore1.fadeIn(100);
     portal.fadeIn(500);
-    player.animate({"left": "160px", "top": "550px"}).css({"transform": "scaleX(-1)"});
+    player.animate({"left": "-=1700px", "top": "300px"});
     ferryMan.animate({"left": "100px"});
     boat.animate({"padding-left": "900px"}, 3000);
     dialogue.text("Look there, it's the portal that will take you home...").css({"font-size": "20px", "border": "0px", "text-shadow": "0px 0px black"});
@@ -265,14 +274,38 @@ function gameWon() {
             ferryMan.fadeIn(500)
             dialogue.text("This is where I leave you. Well done on making it here!");
             dialogue.fadeIn(2000);
-            dialogue.fadeOut(2000);
+            dialogue.fadeOut(2000, goodBye);
+            function goodBye() {
+                dialogue.text("Thank you! I can't wait to get home... But wait, do you know what my name is?");
+                dialogue.fadeIn(2000);
+                dialogue.fadeOut(2000, hint);
+                function hint() {
+                    dialogue.text("The stars have your answer...");
+                    dialogue.fadeIn(2000);
+                    dialogue.fadeOut(2000, endGame);
+                    stars.on('click', function() {
+                        dialogue.css({"font-size": "60px"});
+                        dialogue.text("Persephone").fadeIn(2000).fadeOut(2000, credits);
+                        function credits() {
+                            dialogue.css({"font-size":"25px"}).html("Thank you for playing <bold>ODYSSEY</bold>!<p />Thanks go to: David Campbell, Jet Haze, and Angelique Ward for their feedback and help; the brilliant GA instructor duo - Saad Iqbal and Ana Borges - as well as all of my GA cohort!<p />I hope you enjoyed playing <3").fadeIn(2000);
+                            dialogue.delay(6000).fadeOut(2000);
+                        }});
+                    function endGame() {
+                       player.animate({"top": "-=30px", "left": "-=160px"}, 2000);
+                       player.fadeOut(500);
+                       portal.delay(2500).fadeOut(500);
+                       }
+                    }
+                }
+            }
         }
-}
 
-gameWon();
+
 
 
 // BONUS FUNCTIONS
+
+//  background change
 
 // Function to make the moon glow - NOT WORKING YET
 // function glow() {
