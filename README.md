@@ -136,6 +136,10 @@ Game win function: gameWon() - this function is another favourite as it ties up 
 
 I tackled issues in a very methodical way, by console logging  individual elements and variables to see what issues I was dealing with, and considering how different elements were interacting. I had some trouble with the random generator function in particular, but all in all I found the process of detecting bugs and errors to go quite smoothly.
 
+### Bugs and future iterations
+
+There are currently no bugs in the game. In future iterations, I would add a hint function for each question, a skip button for the dialogue elements so the user can fast forward if they choose, and add a function to change the placeholder on the player's answer inputfield to show how many letters the answers should have.  I would potentially also add some obstacle levels to vary the game, as well as some minor additional animations.  
+
 ### Technologies Used:
 
 JavaScript, HTML, CSS, jQuery
