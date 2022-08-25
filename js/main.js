@@ -41,6 +41,10 @@ const comments = {
   6: "Good, but let's see if you get this next one...",
 };
 
+const speech = {
+    1: "hi"
+}
+
 // Intro sequence working so far!
 introSeq();
 
@@ -209,7 +213,7 @@ function preQuestion() {
   }
 }
 function question() {
-  if (questionsAsked === 3) {
+  if (questionsAsked === 9) {
     gameWon();
   } else {
     dialogue.css({ border: "0px", height: "400px", "font-size": "40px" });
@@ -243,7 +247,6 @@ function question() {
               function changeBackground() {
                 stars.css({ "background-image": url });
               }
-              console.log(questionsAsked);
               changeBackground();
               dialogue.remove("input");
               dialogue.text("Correct!").fadeOut(3000);
@@ -268,6 +271,7 @@ function question() {
       }
     }
   }
+  return score;
 }
 // // dialogue function with for loop that takes parameters(const, delay and fade and increments?)
 
