@@ -1,12 +1,4 @@
-// //Game Start!
-
-// // MAIN FUNCTIONS
-
-// /* Intro sequence function - introSeq() and game
-// Fade in title DONE
-// Fade out title
-// Player fade in & axis flip DONE
-// Player monologue DONE */
+// These are the const values for all the elements on the page
 
 const dialogue = $(".dialogue");
 const player = $("#player");
@@ -19,6 +11,8 @@ const portal = $("#portal");
 const footer = $("footer");
 const nav = $("nav");
 const stars = $(".window");
+
+// These are the riddles that the player gets asked
 
 const questions = {
   1: ["I am bright and I give light...", "sun"],
@@ -43,16 +37,8 @@ const questions = {
   20: ["I never walk but always run...", "river"]
 };
 
-// const comments = {
-//   1: "Hmm, not bad...",
-//   2: "Smart one, aren't you?",
-//   3: "Doing well so far...",
-//   4: "I'm impressed!",
-//   5: "Clever, clever...",
-//   6: "Good, but let's see if you get this next one...",
-// };
+// This is the intro sequence for the first sequence of the game
 
-// Intro sequence working so far!
 introSeq();
 
 function introSeq() {
@@ -131,17 +117,7 @@ function introSeq() {
   }, 10000);
 }
 
-// function dialogueRun (element, text) {
-//     element.text(text);
-//     element.fadeIn(2000);
-//     element.delay(2000).fadeOut(2000);
-// }
-
-// // Partial progSeq() TEST - it works!
-// // setTimeout(function progSeq() {
-// //       // Progress function TEST - it works!
-// //       moveLeft();
-// // }, 20000);
+// This is the function that moves the boat each time a question is asked
 
 function moveLeft() {
   boat.animate({ "padding-left": "100px" }, 4000);
@@ -149,9 +125,6 @@ function moveLeft() {
   boat.animate({ "padding-left": "1200px" }, 4000);
   moon.animate({ left: "+=120px" }, 8000);
 }
-// /* Progress function - progSeq()
-// Boat slide left, then right DONE
-// BONUS: constellation fades/slides out, new constellation fades/slides in */
 
 let questionsAsked = 0;
 let score = 0;
@@ -163,7 +136,8 @@ nav.html(
     playerName
 );
 
-// // Random number generator; question() references index [0] of the alreadyCalled array to make sure it gets the latest number and isn't repeated
+// This is the non-repeating random number generator
+
 let alreadyCalled = [];
 function getRandom() {
   let num = Math.floor(Math.random() * 20) + 1;
@@ -175,17 +149,7 @@ function getRandom() {
   }
 }
 
-// /* Question round function - question()
-// // display question DONE
-// // display input area DONE
-// // log input DONE
-// // check input DONE
-// // track question asked so it isn't repeated DONE
-// // if correct, show correct input DONE
-// // if incorrect, effect to show answer incorrect IN PROGRESS
-// // text fade out DONE
-// BONUS: allow player to select number of questions */
-
+// This is the function where the NPC explains the rulesof the game to the player
 
 function preQuestion() {
   ferryMan.delay(2000).animate({ left: "1000px" }, 3000);
@@ -216,6 +180,7 @@ function preQuestion() {
   }
 }
 
+// This is the function that begins the play round and whether this repeats, or triggers the win or loss functions
 
 function question() {
   if (questionsAsked === 9) {
@@ -278,12 +243,8 @@ function question() {
   }
   return score;
 }
-// // dialogue function with for loop that takes parameters(const, delay and fade and increments?)
 
-// /* Game lose function - gameLost()
-// Dialogue + player fade out
-// NPC monologue
-// Game restart option */
+// This is the function that runs if the player loses,and then resets the game
 
 function gameLost() {
   boat.animate({ "padding-left": "600px" }, 4000);
@@ -299,14 +260,7 @@ function gameLost() {
   });
 }
 
-// /* End sequence function - gameWon()
-// Portal fade in
-// Dialogue
-// Boat slide to shore
-// Player slide to portal and fade out
-// NPC monologue
-// Display game win + score
-// Credits + game restart option */
+// This is the function that runs if the player wins, and initiates the end credits sequence and triggers the game reset function
 
 function gameWon() {
   shore1.fadeIn(100);
@@ -365,6 +319,8 @@ function gameWon() {
     }
   }
 }
+
+// This is the function that allows the player to restart the game
 
 function playAgain() {
     dialogue.html("<button type='submit' id='restart'>Play Again</button>").fadeIn(1000);
