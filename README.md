@@ -2,7 +2,7 @@
 
 ## Development Process
 
-1. Brain storm (mo more than three): **DONE**
+1. Brain storm (no more than three): **DONE**
  - What is the name of the game? **DONE**
  - What’s the idea behind it? **DONE**
  - How does the player start? **DONE**
