@@ -30,20 +30,27 @@ const questions = {
   7: ["I hold many a drink...", "cup"],
   8: ["I rule the tides...", "moon"],
   9: ["You hear me, again and again...", "echo"],
+  10:["I\'m tall when I\'m young, and I\'m short when I\'m old...", "candle"],
+  11: ["I have to be broken before you can use me...", "egg"],
+  12: ["I get wetter as I dry...", "towel"],
+  13: ["I have legs, but can't walk...", "table"],
+  14: ["I have a head and tail, but no body...", "coin"],
+  15: ["I break when you say my name...", "silence"],
+  16: ["I am always hungry and will die if not fed...", "fire"],
+  17: ["I can fill a room but take up no space...", "light"],
+  18: ["I have many keys, but can open no locks...", "piano"],
+  19: ["I have branches, but no fruit, trunk or leaves...", "bank"],
+  20: ["I never walk but always run...", "river"]
 };
 
-const comments = {
-  1: "Hmm, not bad...",
-  2: "Smart one, aren't you?",
-  3: "Doing well so far...",
-  4: "I'm impressed!",
-  5: "Clever, clever...",
-  6: "Good, but let's see if you get this next one...",
-};
-
-const speech = {
-    1: "hi"
-}
+// const comments = {
+//   1: "Hmm, not bad...",
+//   2: "Smart one, aren't you?",
+//   3: "Doing well so far...",
+//   4: "I'm impressed!",
+//   5: "Clever, clever...",
+//   6: "Good, but let's see if you get this next one...",
+// };
 
 // Intro sequence working so far!
 introSeq();
@@ -63,7 +70,7 @@ function introSeq() {
   setTimeout(() => {
     dialogue.css({
       "font-size": "20px",
-      border: "0px",
+      "border": "0px",
       "text-shadow": "0px 0px black",
     });
     dialogue.text("Where am I? I don't remember getting here...");
@@ -100,7 +107,7 @@ function introSeq() {
                   .fadeIn(2000);
                 dialogue
                   .append(
-                    "<p><button type='submit'id='play'>Pay the fee</button><button type='submit' id='dont-play'>Don't pay</button></p>"
+                    "<p><button type='submit' id='play'>Pay the fee</button><button type='submit' id='dont-play'>Don't pay</button></p>"
                   )
                   .fadeIn(2000);
                 $("#play").on("click", function () {
@@ -113,11 +120,7 @@ function introSeq() {
                   ferryMan
                     .css({ transform: "scaleX(1)" })
                     .animate({ left: "100px" }, 3000)
-                    .fadeOut(3000, introSeq);
-                  ferryMan.delay(6000).queue(function (next) {
-                    ferryMan.css({ transform: "scaleX(-1)" });
-                    next();
-                  });
+                    .fadeOut(3000, playAgain);
                 });
               }
             }
@@ -141,7 +144,7 @@ function introSeq() {
 // // }, 20000);
 
 function moveLeft() {
-  boat.animate({ "padding-left": "200px" }, 4000);
+  boat.animate({ "padding-left": "100px" }, 4000);
   shore.delay(500).animate({ opacity: "0" });
   boat.animate({ "padding-left": "1200px" }, 4000);
   moon.animate({ left: "+=120px" }, 8000);
@@ -163,7 +166,7 @@ nav.html(
 // // Random number generator; question() references index [0] of the alreadyCalled array to make sure it gets the latest number and isn't repeated
 let alreadyCalled = [];
 function getRandom() {
-  let num = Math.floor(Math.random() * 9) + 1;
+  let num = Math.floor(Math.random() * 20) + 1;
   if (!alreadyCalled.includes(num)) {
     alreadyCalled.unshift(num);
     return num;
@@ -183,7 +186,7 @@ function getRandom() {
 // // text fade out DONE
 // BONUS: allow player to select number of questions */
 
-// // question(); - WORKS LIKE A CHARM!!!
+
 function preQuestion() {
   ferryMan.delay(2000).animate({ left: "1000px" }, 3000);
   dialogue
@@ -192,8 +195,8 @@ function preQuestion() {
   dialogue.fadeIn(2000);
   dialogue.delay(1000).fadeOut(2000, details);
   function details() {
-    dialogue.text(
-      "I give you a riddle, and you give me the answer - just the word. I'll give you one obol for each answer so you can pay for the passage. Deal?"
+    dialogue.html(
+      "I'll ask you 9 riddles, and you give me the answer - just the word.<p />I'll give you one obol for each answer so you can pay for the passage. Deal?"
     );
     dialogue.fadeIn(2000);
     dialogue.delay(2000).fadeOut(2000, agree);
@@ -212,6 +215,8 @@ function preQuestion() {
     }
   }
 }
+
+
 function question() {
   if (questionsAsked === 9) {
     gameWon();
@@ -227,14 +232,14 @@ function question() {
       dialogue.delay(500).fadeIn(1500);
       dialogue.delay(500).fadeOut(1500, response);
       function response() {
+        let solution = questions[random][1];
+        let playerAnswer = null;
         dialogue.text("").fadeIn();
         dialogue
           .append(
-            '<p><input type="text" placeholder="I am..." id="playerResponse"></input></p>'
+            `<p><input type="text" placeholder="I am..." id="playerResponse"></input></p>`
           )
           .fadeIn(2000);
-        let solution = questions[random][1];
-        let playerAnswer = null;
         $("#playerResponse").keypress(function (event) {
           let keycode = event.keyCode ? event.keyCode : event.which;
           if (keycode == "13") {
@@ -289,9 +294,9 @@ function gameLost() {
     .css({ "font-size": "20px", border: "0px", "text-shadow": "0px 0px black" })
     .delay(4000)
     .fadeIn(2000);
-  dialogue.fadeOut(6000, introSeq);
-  boat.delay(8000).animate({ "padding-left": "1200px" });
-  score = 0;
+  dialogue.fadeOut(6000, function() {
+    window.location.reload()
+  });
 }
 
 // /* End sequence function - gameWon()
@@ -339,23 +344,31 @@ function gameWon() {
         dialogue.fadeOut(2000);
         stars.on("click", function () {
           dialogue.css({ "font-size": "60px" });
-          dialogue.text("Persephone").fadeIn(2000).fadeOut(2000, endGame);
+          dialogue.html("Persephone").fadeIn(2000).fadeOut(2000, endGame);
         });
         function endGame() {
           player.animate({ top: "-=30px", left: "-=160px" }, 2000);
           player.fadeOut(500);
           portal.delay(2500).fadeOut(500, credits);
           function credits() {
+            stars.unbind('click');
             dialogue
               .css({ "font-size": "25px" })
               .html(
                 "Thank you for playing ODYSSEY<p />Thanks go to: David Campbell, Jet Haze, and Angelique Ward for their feedback and help; the brilliant GA instructor duo - Saad Iqbal and Ana Borges - as well as all of my GA cohort!<p />I hope you enjoyed playing <3"
               )
               .fadeIn(2000);
-            dialogue.delay(6000).fadeOut(2000);
+            dialogue.delay(6000).fadeOut(2000, playAgain);
           }
         }
       }
     }
   }
+}
+
+function playAgain() {
+    dialogue.html("<button type='submit' id='restart'>Play Again</button>").fadeIn(1000);
+    $('#restart').on('click', function() {
+        window.location.reload();
+    });
 }
