@@ -55,7 +55,7 @@ Start: You start in front of your forest with the trees at your back when the Sk
 ### Game 2
 **Title:** Odyssey  
 **Idea:** You wake up in the Underworld - and you don’t know where you are! Oh no! You don’t belong here at all! You have to get home!  
-**Aim:** Get to the other side of the River Styx 
+**Aim:** Get to the other side of the River Styx  
 **Start:** You start next to the banks of the River Styx - the portal to get out is on the other side. The Ferry Man wants you to guess a series of questions to allow you to cross.  
 **Progression:** For each correct guess you move forward across the river  
 **How to win:** Guess the right answers and get tot he far shore  
