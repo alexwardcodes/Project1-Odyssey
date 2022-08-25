@@ -24,7 +24,7 @@
 10. Test game **DONE**
 11. BONUS: Add extra animations/styling **DONE**
 
-*Stage 1:* Brainstorming  
+**Stage 1:** Brainstorming  
 
 I had a brainstorming session first of all to decide which game I wanted to pick: a choice of Tic-Tac-Toe or a game of choice. I wanted to go with my own idea and had the following ideas for games, which I rejected. The first was too simple, and the third was too hard.
 
@@ -63,7 +63,7 @@ Start: You start in front of your forest with the trees at your back when the Sk
 **Look:** Player is on the shore on the right of the screen, background is starry sky, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen  
 **Scoring:** The score is shown on the top of the screen
 
-*Stage 3:* Wireframe and user stories  
+**Stage 3:** Wireframe and user stories  
 
 **Wireframe:** I started by creating a wireframe using Figma Jam. I created a separate frame for each screen that I wanted the player to see. I then exported this and would later add it to my Git repo as an outline to use while designing my game.  
 
