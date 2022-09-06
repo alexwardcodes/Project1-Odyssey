@@ -2,7 +2,7 @@
 
 ## Description
 
-This project was assigned at the end of the second week of the SEI course. The aim of the project being to design a game from scratch within one week, working individually. I gave my project the name of **Odyssey**.
+This project was assigned at the end of the second week of General Assembly’s 3-month SEI (Software Engineering Immersive) course, in which I am studying the fundamentals of software engineering with the aim to launch a career in this sector. The aim of the project was to design a game from scratch within one week, working individually. I gave my project the name of **Odyssey**.
 
 ## Deployment link
 
@@ -84,38 +84,38 @@ I had a brainstorming session first of all to decide which game I wanted to pick
 
 #### Game 1
 **Title:** Riddle Me This  
-**Idea:** Mythology quiz  
-**Aim:** Guess the questions about mythology right to win the game  
-**Start:** You start with Norse mythology with a background set in Scandinavia  
-**Progression:** Answer each question correctly to progress to the next question, in a new place  
-**How to win:** Guess all of the 15 questions right  
-**How to lose:** Three wrong answers in a row or less than total 12 right  
-**Look:** With each question, the user will see a different country background and a different character the question relates to  
-**Scoring:** The number of questions left, correct answers and incorrect answers is shown on the right of the screen
+**Idea:** Mythology quiz.  
+**Aim:** Guess the questions about mythology right to win the game.  
+**Start:** You start with Norse mythology with a background set in Scandinavia.  
+**Progression:** Answer each question correctly to progress to the next question, in a new place.  
+**How to win:** Guess all of the 15 questions right.  
+**How to lose:** Three wrong answers in a row or less than total 12 right.  
+**Look:** With each question, the user will see a different country background and a different character the question relates to.  
+**Scoring:** The number of questions left, correct answers and incorrect answers is shown on the right of the screen.
 
 #### Game 3
 **Title:** Skull ’n’ Bones
 Idea: You are a wizard defending a forest - but the Skull King is coming to destroy it!  
-**Aim:** Protect your trees  
-**Start:** You start in front of your forest with the trees at your back when the Skull King suddenly appears  
-**Progression:** Collect random potions that appear and fire spells at the the skull  
-**How to win:** Hit the skull enough times before your trees are all destroyed  
-**How to lose:** Get hit by the mini-skulls that the Skull King fires at you, or all your trees are destroyed  
-**Look:** Green background, trees to the left, forest to the bottom and top  
-**Scoring:** A health bar on the player’s side shows their health and trees remaining, a health bar on the Skull King’s side shows his health
+**Aim:** Protect your trees.  
+**Start:** You start in front of your forest with the trees at your back when the Skull King suddenly appears.  
+**Progression:** Collect random potions that appear and fire spells at the the skull.  
+**How to win:** Hit the skull enough times before your trees are all destroyed.  
+**How to lose:** Get hit by the mini-skulls that the Skull King fires at you, or all your trees are destroyed.  
+**Look:** Green background, trees to the left, forest to the bottom and top.  
+**Scoring:** A health bar on the player’s side shows their health and trees remaining, a health bar on the Skull King’s side shows his health.
 
 ### Stage 2: Picking my idea  
 
 #### Game 2
 **Title:** Odyssey  
 **Idea:** You wake up in the Underworld - and you don’t know where you are! Oh no! You don’t belong here at all! You have to get home!  
-**Aim:** Get to the other side of the River Styx  
+**Aim:** Get to the other side of the River Styx.  
 **Start:** You start next to the banks of the River Styx - the portal to get out is on the other side. The Ferry Man wants you to guess a series of questions to allow you to cross.  
-**Progression:** For each correct guess you move forward across the river  
-**How to win:** Guess the right answers and get tot he far shore  
-**How to lose:** Fail to get the question right and you will be trapped in the Underworld forever  
-**Look:** Player is on the shore on the right of the screen, background is starry sky, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen  
-**Scoring:** The score is shown on the top of the screen
+**Progression:** For each correct guess you move forward across the river.  
+**How to win:** Guess the right answers and get tot he far shore.  
+**How to lose:** Fail to get the question right and you will be trapped in the Underworld forever.  
+**Look:** Player is on the shore on the right of the screen, background is starry sky, the river on the bottom, the Ferry Man is in the boat next to the shore on the right of the screen, the portal is on the left of the screen.  
+**Scoring:** The score is shown on the top of the screen.
 
 ### Stage 3: Wireframe and user stories  
 
