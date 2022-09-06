@@ -2,7 +2,7 @@
 
 ## Description
 
-This project was assigned at the end of the second week of the SEI course. The aim of the project being to design a game from scratch within one week, working individidually. I gave my project the name of **Odyssey**.
+This project was assigned at the end of the second week of the SEI course. The aim of the project being to design a game from scratch within one week, working individually. I gave my project the name of **Odyssey**.
 
 ## Deployment link
 
@@ -48,7 +48,7 @@ At the end of the project we then had to deliver a presentation on our project c
 
 ## Planning
 
-To initiate the planning stage, I began by developing the following overview of my development process so that I could have a clear understanding of what the project required in order for me to achieve the look and functionality I was aiming for my game, and so I could be certain that my code would deliver all of the functionality I had in mind: 
+To initiate the planning stage, I began by developing the following overview of my development process so that I could have a clear understanding of what the project required in order for me to achieve the look and functionality I was aiming for in my game, and so I could be certain that my code would deliver all of the functionality I had in mind: 
 
 ### Development Overivew
 
@@ -179,7 +179,7 @@ I tested my functions individually before linking them up to each other to make 
 
 ### Stage 9: Touch up styling  
 
-I then moved on to touching up the syle elements. I had some issues with CSS due to the setup of my HTML, so I adjusted this and made sure all of my elements were in the right place to ensure the game flows seamlessly.
+I then moved on to touching up the style elements. I had some issues with CSS due to the setup of my HTML, so I adjusted this and made sure all of my elements were in the right place to ensure the game flows seamlessly.
 
 ### Stage 10: Test game  
 
@@ -199,7 +199,7 @@ The win is decided based on getting all 9 of the randomly generated questions ri
 
 I tackled issues in a very methodical way, by console logging individual elements and variables to see what issues I was dealing with, and considering how different elements were interacting. I had some trouble with the random generator function in particular, but all in all I found the process of detecting bugs and errors to go quite smoothly.
 
-The particular nature of my game meant that I had to chain different sequences of animations together. This meant constantly adjusting timings to ensure a smooth flow to the game, repeatedly testing sequences to make sure there was no skipping, displacement of elements or other erroneous functionality. I carefully noted any errors I came across, the point in the sequence or function that the error was occurring, and went over my code item by item to rectify these issues. My detailed approach made it much easier for me to detect, log and resolve these issues throughout the projecft on an ongoing basis rather than leaving thisuntil the end of the project to implement fixes.
+The particular nature of my game meant that I had to chain different sequences of animations together. This meant constantly adjusting timings to ensure a smooth flow to the game, repeatedly testing sequences to make sure there was no skipping, displacement of elements or other erroneous functionality. I carefully noted any errors I came across, the point in the sequence or function that the error was occurring, and went over my code item by item to rectify these issues. My detailed approach made it much easier for me to detect, log and resolve these issues throughout the project on an ongoing basis rather than leaving this until the end of the project to implement fixes.
 
 ## Wins
 
@@ -207,7 +207,7 @@ The particular nature of my game meant that I had to chain different sequences o
 
 **getRandom()**
 
-This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time alreadyCalled() is called, it checks to see if the new randomly generated nunmber is inthe array;  if it is, itcalls itself again until itpicks anumber that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
+This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time getRandom() is called, it checks to see if the new randomly generated nunmber is in the array;  if it is, it calls itself again until it picks a number that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
 
 ![Screenshot 2022-09-06 at 08 19 52](https://media.git.generalassemb.ly/user/44781/files/f7e26f2e-1432-4186-8e30-63043c89f64c)
 
@@ -234,8 +234,8 @@ We had several standups during the course of our project and I found this a good
 
 ## Bugs
 
-There are currently no bugs in the game, sincen I was thorough with my development and testing phases. This meant I was ablet to fix all issues before presenting the project.
+There are currently no bugs in the game, since I was thorough with my development and testing phases. This meant I was able to fix all issues before presenting the project.
 
 ## Future Improvements
 
-In future iterations, I would add a hint function for each question, a skip button for the dialogue elements so the user can fast forward if they choose, and add a function to change the placeholder on the player's answer inputfield to show how many letters the answers should have.  I would potentially also add some obstacle levels to vary the game, as well as some minor additional animations.
+In future iterations, I would add a hint function for each question, a skip button for the dialogue elements so the user can fast forward if they choose, and add a function to change the placeholder on the player's answer input field to show how many letters the answers should have.  I would potentially also add some obstacle levels to vary the game, as well as some minor additional animations.
