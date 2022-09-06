@@ -94,8 +94,8 @@ I had a brainstorming session first of all to decide which game I wanted to pick
 **Scoring:** The number of questions left, correct answers and incorrect answers is shown on the right of the screen.
 
 #### Game 3
-**Title:** Skull ’n’ Bones
-Idea: You are a wizard defending a forest - but the Skull King is coming to destroy it!  
+**Title:** Skull ’n’ Bones  
+**Idea:** You are a wizard defending a forest - but the Skull King is coming to destroy it!  
 **Aim:** Protect your trees.  
 **Start:** You start in front of your forest with the trees at your back when the Skull King suddenly appears.  
 **Progression:** Collect random potions that appear and fire spells at the the skull.  
