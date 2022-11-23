@@ -17,7 +17,7 @@ There are no additional installation instructions or steps needed since Odyssey 
 
 ## Timeframe & Working Team
 
-We were given one week to complete this project, which meant I also had a weekened to work on it, which I definitely did! The project was assigned on an individual basis, so each of us had to come up with our own idea for a game, build this from scratch and deliver it individually.
+We were given one week to complete this project, which meant I also had a weekend to work on it, which I definitely did! The project was assigned on an individual basis, so each of us had to come up with our own idea for a game, build this from scratch and deliver it individually.
 
 ## Technologies Used
 
@@ -207,7 +207,7 @@ The particular nature of my game meant that I had to chain different sequences o
 
 **getRandom()**
 
-This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time getRandom() is called, it checks to see if the new randomly generated nunmber is in the array;  if it is, it calls itself again until it picks a number that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
+This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time getRandom() is called, it checks to see if the new randomly generated number is in the array;  if it is, it calls itself again until it picks a number that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
 
 ![Screenshot 2022-09-06 at 08 19 52](https://media.git.generalassemb.ly/user/44781/files/f7e26f2e-1432-4186-8e30-63043c89f64c)
 
