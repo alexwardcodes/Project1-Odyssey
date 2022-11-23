@@ -175,7 +175,7 @@ Looking through my requirements, I realised my code could be best broken down in
 
 ### Stage 8: Test functions  
 
-I tested my functions individually before linking them up to each other to make sure they interacted in a way that caused zero conflicts. This ended up being somewhat time-consuming but eventually I managed to link my intro, question, game win/loss and ending sequences together. I used console.log along the way to ensure I was getting the right values at each point. 
+I tested the game many, many times. This meant I was able to see exactly where things weren't working, and could then go and adjust functions and variables as necessary. I added console.logs to inspect each line of code that wasn’t doing what I anticipated it would do, and would then run the function in question and check the logs to see what result I was getting. I tested functions individually, and in combination with other functions in the same “sequence” of the game to make sure functions transitioned into one another smoothly. In the course of doing this, I adjusted timings for fade-outs and other transition effects to make these seamless for the user.
 
 ### Stage 9: Touch up styling  
 
