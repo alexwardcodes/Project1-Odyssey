@@ -161,17 +161,15 @@ I knew I wanted to use pixellated characters for my game, as well as a pixellate
 
 I established the basic layout of my game using CSS and initially positioned all of my elements so I knew where they would go and to fix any clashes in placement or styling.
 
-![Screenshot 2022-09-06 at 08 36 12](https://media.git.generalassemb.ly/user/44781/files/7cdd9292-399c-4f33-90b8-31fe2ca211aa)
+<img width="702" height="292" alt="Image" src="https://github.com/user-attachments/assets/7943f224-6ca5-4bee-80fa-0d1f0d0501ae" />
 
 ### Stage 7: Structuring logic and starting work on the functions
 
 Looking through my requirements, I realised my code could be best broken down into several sections of logic: the intro sequence, the play sequence, the progression sequence, the lose sequence, and the end sequence, which only runs if the player wins. I split my .js into these 5 sections and planned out the logic for each one. 
 
-![Screenshot 2022-09-06 at 08 39 09](https://media.git.generalassemb.ly/user/44781/files/c5457f78-9551-434d-bfc4-1717b10a2f13)
-
-![Screenshot 2022-09-06 at 08 39 22](https://media.git.generalassemb.ly/user/44781/files/ff4ba0d4-3ba2-408c-8689-e0700b12212a)
-
-![Screenshot 2022-09-06 at 08 39 38](https://media.git.generalassemb.ly/user/44781/files/a8ae4529-c883-42f1-8c68-30d9a95b2b31)
+<img width="607" height="144" alt="Image" src="https://github.com/user-attachments/assets/92499faf-094d-40ab-b267-591d9b770342" />
+<img width="1185" height="542" alt="Image" src="https://github.com/user-attachments/assets/abcdd20b-bafe-4058-bdcc-ca0197b549b1" />
+<img width="425" height="164" alt="Image" src="https://github.com/user-attachments/assets/18f1457d-9d4a-4e89-b7eb-eac9225e0285" />
 
 ### Stage 8: Test functions  
 
@@ -209,20 +207,19 @@ The particular nature of my game meant that I had to chain different sequences o
 
 This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time getRandom() is called, it checks to see if the new randomly generated number is in the array;  if it is, it calls itself again until it picks a number that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
 
-![Screenshot 2022-09-06 at 08 19 52](https://media.git.generalassemb.ly/user/44781/files/f7e26f2e-1432-4186-8e30-63043c89f64c)
+<img width="501" height="343" alt="Image" src="https://github.com/user-attachments/assets/82a9b8da-22a4-4413-a5e8-48ae5794aff3" />
 
 **gameWon()**
 
 This function is another favourite as it ties up the game nicely and also displays credits, providing a replay option to the player. It also calls the function that reveals the player's identity just before the game ends.
 
-![Screenshot 2022-09-06 at 08 30 18](https://media.git.generalassemb.ly/user/44781/files/c808b2ba-f7b8-4871-9549-43cdb4ed2c04)
+<img width="702" height="107" alt="Image" src="https://github.com/user-attachments/assets/21fed16c-f79f-4a82-a4e3-748adb3d6131" />
 
 **playAgain()**
 
 This function gets called several times throughout the game so the player can start from the beginning if they lose, after winning and if they choose not to proceed with the main play round (which was a quirk I decided to add in simply for player entertainment).
 
-![Screenshot 2022-09-06 at 08 33 23](https://media.git.generalassemb.ly/user/44781/files/00e101d3-05d7-4b61-bddb-3c73c2945d82)
-
+<img width="1121" height="642" alt="Image" src="https://github.com/user-attachments/assets/76035b68-3055-4f82-8ab8-a83095ea9b15" />
 
 ## Key Learnings & Takeaways
 
