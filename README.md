@@ -161,15 +161,15 @@ I knew I wanted to use pixellated characters for my game, as well as a pixellate
 
 I established the basic layout of my game using CSS and initially positioned all of my elements so I knew where they would go and to fix any clashes in placement or styling.
 
-<img width="702" height="292" alt="Image" src="https://github.com/user-attachments/assets/7943f224-6ca5-4bee-80fa-0d1f0d0501ae" />
+<img width="1121" height="642" alt="Image" src="https://github.com/user-attachments/assets/76035b68-3055-4f82-8ab8-a83095ea9b15" />
 
 ### Stage 7: Structuring logic and starting work on the functions
 
 Looking through my requirements, I realised my code could be best broken down into several sections of logic: the intro sequence, the play sequence, the progression sequence, the lose sequence, and the end sequence, which only runs if the player wins. I split my .js into these 5 sections and planned out the logic for each one. 
 
+<img width="702" height="292" alt="Image" src="https://github.com/user-attachments/assets/7943f224-6ca5-4bee-80fa-0d1f0d0501ae" />
 <img width="607" height="144" alt="Image" src="https://github.com/user-attachments/assets/92499faf-094d-40ab-b267-591d9b770342" />
 <img width="1185" height="542" alt="Image" src="https://github.com/user-attachments/assets/abcdd20b-bafe-4058-bdcc-ca0197b549b1" />
-<img width="425" height="164" alt="Image" src="https://github.com/user-attachments/assets/18f1457d-9d4a-4e89-b7eb-eac9225e0285" />
 
 ### Stage 8: Test functions  
 
@@ -207,19 +207,19 @@ The particular nature of my game meant that I had to chain different sequences o
 
 This function generates a random number between 1 and 9. The number is first put into an empty array, and then used by the question() function to pick a question from the questions object. The next time getRandom() is called, it checks to see if the new randomly generated number is in the array;  if it is, it calls itself again until it picks a number that has not already been stored in the array. It pushes this to the array, and again, this number is used to display a question to the player. This ensures that the same question is never picked again, and with a win requirement of 9 and a question total of 20, this avoids any issues that may arise.  
 
-<img width="501" height="343" alt="Image" src="https://github.com/user-attachments/assets/82a9b8da-22a4-4413-a5e8-48ae5794aff3" />
+<img width="425" height="164" alt="Image" src="https://github.com/user-attachments/assets/18f1457d-9d4a-4e89-b7eb-eac9225e0285" />
 
 **gameWon()**
 
 This function is another favourite as it ties up the game nicely and also displays credits, providing a replay option to the player. It also calls the function that reveals the player's identity just before the game ends.
 
-<img width="702" height="107" alt="Image" src="https://github.com/user-attachments/assets/21fed16c-f79f-4a82-a4e3-748adb3d6131" />
+<img width="501" height="343" alt="Image" src="https://github.com/user-attachments/assets/82a9b8da-22a4-4413-a5e8-48ae5794aff3" />
 
 **playAgain()**
 
 This function gets called several times throughout the game so the player can start from the beginning if they lose, after winning and if they choose not to proceed with the main play round (which was a quirk I decided to add in simply for player entertainment).
 
-<img width="1121" height="642" alt="Image" src="https://github.com/user-attachments/assets/76035b68-3055-4f82-8ab8-a83095ea9b15" />
+<img width="702" height="107" alt="Image" src="https://github.com/user-attachments/assets/21fed16c-f79f-4a82-a4e3-748adb3d6131" />
 
 ## Key Learnings & Takeaways
 
